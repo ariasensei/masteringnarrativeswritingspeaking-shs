@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering Personal Narratives - Aria's Learning Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e9ecef;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+
+        .tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6c757d;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab:hover {
+            background: #e9ecef;
+            color: #495057;
+        }
+
+        .tab.active {
+            color: #4facfe;
+            border-bottom-color: #4facfe;
+            background: white;
+        }
+
+        .content {
+            padding: 40px;
+            min-height: 600px;
+            line-height: 1.6;
+        }
+
+        .lesson-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .lesson-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4facfe;
+            padding-bottom: 10px;
+        }
+
+        .section h3 {
+            color: #34495e;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .vocab-card {
+            background: #f8f9fa;
+            border-left: 4px solid #4facfe;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .vocab-word {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .vocab-meaning {
+            color: #5a6c7d;
+            margin-bottom: 10px;
+        }
+
+        .vocab-example {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+
+        .translation {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .grammar-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .grammar-box h3 {
+            color: #2d3436;
+            margin-top: 0;
+        }
+
+        .grammar-rule {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #00b894;
+        }
+
+        .activity-box {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .activity-box h3 {
+            color: #2d3436;
+            margin-top: 0;
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Aria's Learning Hub</h1>
+            <p>Mastering Personal Narratives: Speaking and Writing Your Story</p>
+            <p style="font-size: 1rem; margin-top: 10px;">For Incoming SHS and SHS Students</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('intro')">Introduction</button>
+            <button class="tab" onclick="showTab('lesson1')">Lesson 1</button>
+            <button class="tab" onclick="showTab('lesson2')">Lesson 2</button>
+            <button class="tab" onclick="showTab('lesson3')">Lesson 3</button>
+            <button class="tab" onclick="showTab('lesson4')">Lesson 4</button>
+            <button class="tab" onclick="showTab('lesson5')">Lesson 5</button>
+            <button class="tab" onclick="showTab('lesson6')">Lesson 6</button>
+            <button class="tab" onclick="showTab('lesson7')">Lesson 7</button>
+            <button class="tab" onclick="showTab('lesson8')">Lesson 8</button>
+            <button class="tab" onclick="showTab('lesson9')">Lesson 9</button>
+            <button class="tab" onclick="showTab('lesson10')">Lesson 10</button>
+            <button class="tab" onclick="showTab('lesson11')">Lesson 11</button>
+            <button class="tab" onclick="showTab('lesson12')">Lesson 12</button>
+            <button class="tab" onclick="showTab('lesson13')">Lesson 13</button>
+            <button class="tab" onclick="showTab('lesson14')">Lesson 14</button>
+            <button class="tab" onclick="showTab('lesson15')">Lesson 15</button>
+        </div>
+
+        <div class="content">
+            <div id="intro" class="tab-content">
+                <div class="section">
+                    <h2>Mastering Personal Narratives: Speaking and Writing Your Story</h2>
+                    <h3>Introduction</h3>
+                    <p>Welcome to <strong>Aria's Learning Hub: Mastering Personal Narratives!</strong> This comprehensive English Language Arts resource is specifically designed for incoming and Senior High School students like you, aiming to significantly enhance your speaking and writing abilities through engaging, interactive lessons.</p>
+                    
+                    <p>Our journey together will tackle diverse topics across 15 comprehensive lessons, building your fluency and helping you master essential grammatical structures. Each lesson combines vocabulary building, grammar focus, speaking activities, and writing exercises to create a well-rounded learning experience that develops both your confidence and competence in English communication.</p>
+                    
+                    <p>This learning material has been thoughtfully prepared by <strong>Maria Kristina Basa (Teacher Aria, Ms. Tin)</strong> to support your academic journey, foster your communication skills, and thoroughly prepare you for future challenges in both academic and professional settings.</p>
+                </div>
+
+                <div class="lesson-list">
+                    <div class="lesson-item">Lesson 1: Exploring Personal Narratives</div>
+                    <div class="lesson-item">Lesson 2: Exploring Global Issues</div>
+                    <div class="lesson-item">Lesson 3: Analyzing Media</div>
+                    <div class="lesson-item">Lesson 4: Cultural Diversity</div>
+                    <div class="lesson-item">Lesson 5: Problem-Solving and Decision-Making</div>
+                    <div class="lesson-item">Lesson 6: Health and Well-being</div>
+                    <div class="lesson-item">Lesson 7: Technology and Society</div>
+                    <div class="lesson-item">Lesson 8: Historical Events and Their Impact</div>
+                    <div class="lesson-item">Lesson 9: Arts and Literature</div>
+                    <div class="lesson-item">Lesson 10: Career Exploration</div>
+                    <div class="lesson-item">Lesson 11: Environmental Awareness</div>
+                    <div class="lesson-item">Lesson 12: Social Media and Communication</div>
+                    <div class="lesson-item">Lesson 13: Travel and Cultural Exchange</div>
+                    <div class="lesson-item">Lesson 14: Leadership and Teamwork</div>
+                    <div class="lesson-item">Lesson 15: Future Goals and Aspirations</div>
+                </div>
+            </div>
+
+            <div id="lesson1" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 1: Exploring Personal Narratives</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>Personal narratives are powerful tools for sharing your experiences, dreams, and perspectives. When telling your story, remember to:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Use vivid details to paint a picture for your audience</li>
+                        <li>Connect your experiences to emotions and lessons learned</li>
+                        <li>Organize your thoughts chronologically or by importance</li>
+                        <li>Practice speaking clearly and at an appropriate pace</li>
+                        <li>Make eye contact and use natural gestures when presenting</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Words for Your Stories and Dreams</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Memorable</div>
+                            <div class="vocab-meaning">Something you'll always remember.</div>
+                            <div class="vocab-example">"My graduation day was truly memorable."</div>
+                            <div class="translation">🇯🇵 記憶に残る (kioku ni nokoru) | 🇨🇳 难忘的 (nánwàng de)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Challenging</div>
+                            <div class="vocab-meaning">Something difficult that tested you.</div>
+                            <div class="vocab-example">"Learning to drive was challenging but rewarding."</div>
+                            <div class="translation">🇯🇵 困難な (konnan na) | 🇨🇳 有挑战性的 (yǒu tiǎozhàn xìng de)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Aspire to</div>
+                            <div class="vocab-meaning">To have a strong desire to achieve something.</div>
+                            <div class="vocab-example">"I aspire to make a difference in my community."</div>
+                            <div class="translation">🇯🇵 志す (kokorozasu) | 🇨🇳 渴望 (kěwàng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Overcome</div>
+                            <div class="vocab-meaning">To successfully deal with a problem.</div>
+                            <div class="vocab-example">"I managed to overcome my fear of public speaking."</div>
+                            <div class="translation">🇯🇵 克服する (kokufuku suru) | 🇨🇳 克服 (kèfú)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Past Tense for Storytelling</h3>
+                    <div class="grammar-rule">
+                        <strong>Simple Past:</strong> Use for completed actions<br>
+                        <em>Example: "I walked to school yesterday."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Past Continuous:</strong> Use for ongoing actions in the past<br>
+                        <em>Example: "I was studying when the phone rang."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Past Perfect:</strong> Use for actions completed before another past action<br>
+                        <em>Example: "I had finished my homework before dinner."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Share Your Story</h3>
+                    <p><strong>Instructions:</strong> Prepare a 3-minute personal narrative about a memorable experience. Use past tenses and vocabulary from today's lesson.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Dream Journal Entry</h3>
+                    <p><strong>Instructions:</strong> Write a 200-word journal entry about your future aspirations using proper past and future tenses.</p>
+                </div>
+            </div>
+
+            <div id="lesson2" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 2: Exploring Global Issues</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing global issues, it's important to:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Present facts objectively and cite reliable sources</li>
+                        <li>Show empathy and understanding for different perspectives</li>
+                        <li>Use formal language appropriate for serious topics</li>
+                        <li>Connect global issues to local or personal experiences when possible</li>
+                        <li>Propose constructive solutions rather than just identifying problems</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Global Awareness</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Crisis</div>
+                            <div class="vocab-meaning">A serious, difficult, or dangerous situation.</div>
+                            <div class="vocab-example">"The climate crisis affects everyone on Earth."</div>
+                            <div class="translation">🇯🇵 危機 (kiki) | 🇨🇳 危机 (wēijī)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Sustainable</div>
+                            <div class="vocab-meaning">Able to continue over time without harming the environment.</div>
+                            <div class="vocab-example">"We need sustainable solutions for energy production."</div>
+                            <div class="translation">🇯🇵 持続可能な (jizoku kanō na) | 🇨🇳 可持续的 (kě chíxù de)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Collaborate</div>
+                            <div class="vocab-meaning">To work together with others.</div>
+                            <div class="vocab-example">"Countries must collaborate to solve global warming."</div>
+                            <div class="translation">🇯🇵 協力する (kyōryoku suru) | 🇨🇳 合作 (hézuò)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Impact</div>
+                            <div class="vocab-meaning">A strong effect or influence.</div>
+                            <div class="vocab-example">"Social media has a huge impact on young people."</div>
+                            <div class="translation">🇯🇵 影響 (eikyō) | 🇨🇳 影响 (yǐngxiǎng)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Expressing Opinions and Solutions</h3>
+                    <div class="grammar-rule">
+                        <strong>Opinion Phrases:</strong> In my opinion, I believe that, I think that<br>
+                        <em>Example: "In my opinion, education is the key to progress."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Modal Verbs for Suggestions:</strong> Should, could, might, must<br>
+                        <em>Example: "We should invest in renewable energy."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Conditional Sentences:</strong> If + present, will + base verb<br>
+                        <em>Example: "If we work together, we will solve this problem."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Global Issue Presentation</h3>
+                    <p><strong>Instructions:</strong> Choose one global issue and prepare a 4-minute presentation with your opinion and solutions.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Letter to a World Leader</h3>
+                    <p><strong>Instructions:</strong> Write a formal 250-word letter about a global issue using opinion phrases and modal verbs.</p>
+                </div>
+            </div>
+
+            <div id="lesson3" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 3: Analyzing Media</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When analyzing media content, remember to:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Identify the source and consider its credibility</li>
+                        <li>Distinguish between facts and opinions</li>
+                        <li>Look for bias or persuasive techniques</li>
+                        <li>Consider the target audience and purpose</li>
+                        <li>Support your analysis with specific examples</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Media Analysis</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Credible</div>
+                            <div class="vocab-meaning">Trustworthy and believable.</div>
+                            <div class="vocab-example">"This news source is credible and well-researched."</div>
+                            <div class="translation">🇯🇵 信頼できる (shinrai dekiru) | 🇨🇳 可信的 (kěxìn de)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Bias</div>
+                            <div class="vocab-meaning">Unfair preference for one side over another.</div>
+                            <div class="vocab-example">"The article shows clear bias toward one political party."</div>
+                            <div class="translation">🇯🇵 偏見 (henken) | 🇨🇳 偏见 (piānjiàn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Objective</div>
+                            <div class="vocab-meaning">Based on facts, not influenced by personal feelings.</div>
+                            <div class="vocab-example">"Good journalism should be objective and fair."</div>
+                            <div class="translation">🇯🇵 客観的な (kyakkan-teki na) | 🇨🇳 客观的 (kèguān de)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Influence</div>
+                            <div class="vocab-meaning">The power to affect someone's opinions or behavior.</div>
+                            <div class="vocab-example">"Social media has a strong influence on public opinion."</div>
+                            <div class="translation">🇯🇵 影響 (eikyō) | 🇨🇳 影响 (yǐngxiǎng)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Present Perfect for Analysis</h3>
+                    <div class="grammar-rule">
+                        <strong>Present Perfect:</strong> Have/has + past participle<br>
+                        <em>Example: "This article has influenced many people's opinions."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Passive Voice:</strong> Be + past participle<br>
+                        <em>Example: "The news was reported by several sources."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Comparative Adjectives:</strong> More/less + adjective<br>
+                        <em>Example: "This source is more reliable than that one."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Media Review</h3>
+                    <p><strong>Instructions:</strong> Analyze a news article or advertisement using present perfect and comparative structures.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Media Comparison</h3>
+                    <p><strong>Instructions:</strong> Compare two news sources reporting the same event using grammar structures from this lesson.</p>
+                </div>
+            </div>
+
+            <div id="lesson4" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 4: Cultural Diversity</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing cultural topics:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Show respect for all cultures and traditions</li>
+                        <li>Avoid stereotypes and generalizations</li>
+                        <li>Share personal experiences when appropriate</li>
+                        <li>Ask thoughtful questions to learn more</li>
+                        <li>Celebrate similarities and differences</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Cultural Understanding</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Heritage</div>
+                            <div class="vocab-meaning">Cultural traditions passed down through generations.</div>
+                            <div class="vocab-example">"My family's heritage includes traditional music and dance."</div>
+                            <div class="translation">🇯🇵 遺産 (isan) | 🇨🇳 遗产 (yíchǎn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Diversity</div>
+                            <div class="vocab-meaning">The state of being varied and different.</div>
+                            <div class="vocab-example">"Our school celebrates cultural diversity."</div>
+                            <div class="translation">🇯🇵 多様性 (tayōsei) | 🇨🇳 多样性 (duōyàng xìng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Tradition</div>
+                            <div class="vocab-meaning">Customs or beliefs passed down over time.</div>
+                            <div class="vocab-example">"It's a tradition in our family to gather for holidays."</div>
+                            <div class="translation">🇯🇵 伝統 (dentō) | 🇨🇳 传统 (chuántǒng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Tolerance</div>
+                            <div class="vocab-meaning">Accepting and respecting differences.</div>
+                            <div class="vocab-example">"Tolerance is essential for peaceful coexistence."</div>
+                            <div class="translation">🇯🇵 寛容 (kan'yō) | 🇨🇳 宽容 (kuānróng)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Used to and Present Perfect</h3>
+                    <div class="grammar-rule">
+                        <strong>Used to:</strong> For past habits and states<br>
+                        <em>Example: "People used to celebrate this festival differently."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Present Perfect:</strong> For experiences and traditions<br>
+                        <em>Example: "We have always celebrated this holiday."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Gerunds:</strong> Verb + -ing as nouns<br>
+                        <em>Example: "Learning about other cultures is important."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Cultural Exchange</h3>
+                    <p><strong>Instructions:</strong> Share a tradition from your culture using "used to" and present perfect tenses.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Cultural Reflection</h3>
+                    <p><strong>Instructions:</strong> Write about learning something new about a different culture using today's grammar structures.</p>
+                </div>
+            </div>
+
+            <div id="lesson5" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 5: Problem-Solving and Decision-Making</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing problems and solutions:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Clearly define the problem first</li>
+                        <li>Consider multiple perspectives and solutions</li>
+                        <li>Weigh pros and cons of each option</li>
+                        <li>Think about short-term and long-term consequences</li>
+                        <li>Be open to compromise and collaboration</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Problem-Solving Language</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Analyze</div>
+                            <div class="vocab-meaning">To examine something carefully and in detail.</div>
+                            <div class="vocab-example">"Let's analyze the problem before making a decision."</div>
+                            <div class="translation">🇯🇵 分析する (bunseki suru) | 🇨🇳 分析 (fēnxī)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Alternative</div>
+                            <div class="vocab-meaning">Another option or choice.</div>
+                            <div class="vocab-example">"We need to consider alternative solutions."</div>
+                            <div class="translation">🇯🇵 代替案 (daitai-an) | 🇨🇳 替代方案 (tìdài fāng'àn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Strategy</div>
+                            <div class="vocab-meaning">A plan of action to achieve a goal.</div>
+                            <div class="vocab-example">"Our strategy should focus on long-term benefits."</div>
+                            <div class="translation">🇯🇵 戦略 (senryaku) | 🇨🇳 策略 (cèlüè)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Outcome</div>
+                            <div class="vocab-meaning">The result or consequence of an action.</div>
+                            <div class="vocab-example">"We need to consider the possible outcomes of each decision."</div>
+                            <div class="translation">🇯🇵 結果 (kekka) | 🇨🇳 结果 (jiéguǒ)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Modal Verbs and Conditionals</h3>
+                    <div class="grammar-rule">
+                        <strong>Modal Verbs:</strong> Could, should, might, must for suggestions<br>
+                        <em>Example: "We could try a different approach."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>First Conditional:</strong> If + present, will + base verb<br>
+                        <em>Example: "If we work together, we will find a solution."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Second Conditional:</strong> If + past, would + base verb<br>
+                        <em>Example: "If I were you, I would consider all options."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Problem-Solving Scenario</h3>
+                    <p><strong>Instructions:</strong> Work in groups to solve a problem using modal verbs and conditional sentences.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Decision Analysis</h3>
+                    <p><strong>Instructions:</strong> Write about a difficult decision using conditionals and modal verbs from this lesson.</p>
+                </div>
+            </div>
+
+            <div id="lesson6" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 6: Health and Well-being</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing health topics:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Be sensitive to personal experiences</li>
+                        <li>Focus on general wellness principles</li>
+                        <li>Encourage positive lifestyle choices</li>
+                        <li>Acknowledge that health is multifaceted</li>
+                        <li>Promote both physical and mental well-being</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Health and Wellness</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Nutrition</div>
+                            <div class="vocab-meaning">The process of getting food necessary for health and growth.</div>
+                            <div class="vocab-example">"Good nutrition is essential for a healthy lifestyle."</div>
+                            <div class="translation">🇯🇵 栄養 (eiyō) | 🇨🇳 营养 (yíngyǎng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Mental health</div>
+                            <div class="vocab-meaning">A person's emotional and psychological well-being.</div>
+                            <div class="vocab-example">"Taking care of mental health is just as important as physical health."</div>
+                            <div class="translation">🇯🇵 精神的健康 (seishin-teki kenkō) | 🇨🇳 心理健康 (xīnlǐ jiànkāng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Exercise</div>
+                            <div class="vocab-meaning">Physical activity to improve health and fitness.</div>
+                            <div class="vocab-example">"Regular exercise helps maintain a healthy body."</div>
+                            <div class="translation">🇯🇵 運動 (undō) | 🇨🇳 锻炼 (duànliàn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Wellness</div>
+                            <div class="vocab-meaning">The state of being in good health, especially as an actively pursued goal.</div>
+                            <div class="vocab-example">"Wellness involves taking care of your whole self."</div>
+                            <div class="translation">🇯🇵 健康 (kenkō) | 🇨🇳 健康 (jiànkāng)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Giving Advice and Recommendations</h3>
+                    <div class="grammar-rule">
+                        <strong>Strong Advice:</strong> You should, You ought to, You must<br>
+                        <em>Example: "You should exercise regularly to maintain good health."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Gentle Suggestions:</strong> You might want to, You could try<br>
+                        <em>Example: "You might want to try meditation for stress relief."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Imperatives:</strong> Make sure to, Don't forget to, Remember to<br>
+                        <em>Example: "Make sure to get enough sleep every night."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Wellness Tips</h3>
+                    <p><strong>Instructions:</strong> Create a 3-minute wellness guide for teenagers using advice structures from this lesson.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Health Goal Setting</h3>
+                    <p><strong>Instructions:</strong> Write a personal wellness plan with three realistic health goals using advice language.</p>
+                </div>
+            </div>
+
+            <div id="lesson7" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 7: Technology and Society</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing technology:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Consider both benefits and drawbacks</li>
+                        <li>Think about impact on different groups of people</li>
+                        <li>Discuss ethical implications</li>
+                        <li>Consider future developments</li>
+                        <li>Share personal experiences with technology</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Technology Terms</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Innovation</div>
+                            <div class="vocab-meaning">A new method, idea, or product.</div>
+                            <div class="vocab-example">"Smartphone technology was a major innovation."</div>
+                            <div class="translation">🇯🇵 革新 (kakushin) | 🇨🇳 创新 (chuàngxīn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Digital divide</div>
+                            <div class="vocab-meaning">The gap between those who have access to technology and those who don't.</div>
+                            <div class="vocab-example">"The digital divide affects educational opportunities."</div>
+                            <div class="translation">🇯🇵 デジタル格差 (dejitaru kakusa) | 🇨🇳 数字鸿沟 (shùzì hónggōu)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Privacy</div>
+                            <div class="vocab-meaning">The right to keep personal information secret.</div>
+                            <div class="vocab-example">"Online privacy is a growing concern."</div>
+                            <div class="translation">🇯🇵 プライバシー (puraibashī) | 🇨🇳 隐私 (yǐnsī)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Automation</div>
+                            <div class="vocab-meaning">The use of machines to do work without human control.</div>
+                            <div class="vocab-example">"Automation is changing the job market."</div>
+                            <div class="translation">🇯🇵 自動化 (jidōka) | 🇨🇳 自动化 (zìdònghuà)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Future Tenses and Predictions</h3>
+                    <div class="grammar-rule">
+                        <strong>Will + base verb:</strong> For predictions and future facts<br>
+                        <em>Example: "Technology will continue to change our lives."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Going to + base verb:</strong> For planned future actions<br>
+                        <em>Example: "Scientists are going to develop new AI systems."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Present Continuous:</strong> For arranged future events<br>
+                        <em>Example: "The company is launching a new app next month."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Technology Debate</h3>
+                    <p><strong>Instructions:</strong> Debate a technology topic using future tenses to discuss potential outcomes and predictions.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Future Technology Essay</h3>
+                    <p><strong>Instructions:</strong> Write about future technology developments using various future tense structures.</p>
+                </div>
+            </div>
+
+            <div id="lesson8" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 8: Historical Events and Their Impact</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing historical events:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Provide context and background information</li>
+                        <li>Explain cause and effect relationships</li>
+                        <li>Consider multiple perspectives</li>
+                        <li>Connect past events to present situations</li>
+                        <li>Use specific dates and examples</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Historical Analysis</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Significant</div>
+                            <div class="vocab-meaning">Important and having a major effect.</div>
+                            <div class="vocab-example">"World War II was a significant event in history."</div>
+                            <div class="translation">🇯🇵 重要な (jūyō na) | 🇨🇳 重要的 (zhòngyào de)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Revolution</div>
+                            <div class="vocab-meaning">A complete change in government or social conditions.</div>
+                            <div class="vocab-example">"The Industrial Revolution changed how people lived."</div>
+                            <div class="translation">🇯🇵 革命 (kakumei) | 🇨🇳 革命 (gémìng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Legacy</div>
+                            <div class="vocab-meaning">Something left behind by past events or people.</div>
+                            <div class="vocab-example">"The civil rights movement left a lasting legacy."</div>
+                            <div class="translation">🇯🇵 遺産 (isan) | 🇨🇳 遗产 (yíchǎn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Consequence</div>
+                            <div class="vocab-meaning">A result or effect of an action or event.</div>
+                            <div class="vocab-example">"The war had serious consequences for the economy."</div>
+                            <div class="translation">🇯🇵 結果 (kekka) | 🇨🇳 后果 (hòuguǒ)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Past Perfect and Cause-Effect</h3>
+                    <div class="grammar-rule">
+                        <strong>Past Perfect:</strong> Had + past participle for earlier past events<br>
+                        <em>Example: "By 1945, the war had already changed society forever."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Cause and Effect:</strong> Because of, Due to, As a result<br>
+                        <em>Example: "Due to the invention of the printing press, literacy rates increased."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Time Expressions:</strong> Before, after, by the time, during<br>
+                        <em>Example: "Before the internet, people communicated differently."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Historical Timeline</h3>
+                    <p><strong>Instructions:</strong> Present a historical timeline using past perfect and cause-effect language.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Historical Impact Essay</h3>
+                    <p><strong>Instructions:</strong> Write about how a historical event affects today's world using past perfect and cause-effect structures.</p>
+                </div>
+            </div>
+
+            <div id="lesson9" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 9: Arts and Literature</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing arts and literature:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Express personal opinions and interpretations</li>
+                        <li>Use descriptive language to paint vivid pictures</li>
+                        <li>Connect works to themes and emotions</li>
+                        <li>Compare different artistic styles or periods</li>
+                        <li>Respect diverse artistic expressions</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Artistic Expression</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Masterpiece</div>
+                            <div class="vocab-meaning">An outstanding work of art or literature.</div>
+                            <div class="vocab-example">"The Mona Lisa is considered a masterpiece."</div>
+                            <div class="translation">🇯🇵 傑作 (kessaku) | 🇨🇳 杰作 (jiézuò)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Symbolism</div>
+                            <div class="vocab-meaning">The use of symbols to represent ideas or qualities.</div>
+                            <div class="vocab-example">"The dove is a symbol of peace in many cultures."</div>
+                            <div class="translation">🇯🇵 象徴主義 (shōchō shugi) | 🇨🇳 象征主义 (xiàngzhēng zhǔyì)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Creativity</div>
+                            <div class="vocab-meaning">The ability to create original and imaginative works.</div>
+                            <div class="vocab-example">"Art class encourages creativity and self-expression."</div>
+                            <div class="translation">🇯🇵 創造性 (sōzōsei) | 🇨🇳 创造力 (chuàngzào lì)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Inspiration</div>
+                            <div class="vocab-meaning">The process of being mentally stimulated to create something.</div>
+                            <div class="vocab-example">"Nature is often a source of inspiration for artists."</div>
+                            <div class="translation">🇯🇵 インスピレーション (insupirēshon) | 🇨🇳 灵感 (línggǎn)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Descriptive Language and Adjectives</h3>
+                    <div class="grammar-rule">
+                        <strong>Adjective Order:</strong> Opinion, size, age, shape, color, origin, material<br>
+                        <em>Example: "It's a beautiful, large, ancient, round, golden, Chinese, ceramic vase."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Participle Adjectives:</strong> -ing (active) vs -ed (passive)<br>
+                        <em>Example: "The painting is fascinating. I am fascinated by the colors."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Metaphors and Similes:</strong> Like, as, seems, appears<br>
+                        <em>Example: "The music flows like a gentle river through the concert hall."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Art Gallery Tour</h3>
+                    <p><strong>Instructions:</strong> Present three artworks using descriptive adjectives and metaphorical language.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Creative Review</h3>
+                    <p><strong>Instructions:</strong> Write a review of an artwork using rich descriptive language and proper adjective order.</p>
+                </div>
+            </div>
+
+            <div id="lesson10" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 10: Career Exploration</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing careers:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Research thoroughly before speaking</li>
+                        <li>Consider skills, interests, and values</li>
+                        <li>Discuss education and training requirements</li>
+                        <li>Think about future job market trends</li>
+                        <li>Be open to exploring new possibilities</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Career Development</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Qualification</div>
+                            <div class="vocab-meaning">Skills or knowledge that make someone suitable for a job.</div>
+                            <div class="vocab-example">"A medical degree is a qualification for becoming a doctor."</div>
+                            <div class="translation">🇯🇵 資格 (shikaku) | 🇨🇳 资格 (zīgé)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Opportunity</div>
+                            <div class="vocab-meaning">A chance for advancement or progress.</div>
+                            <div class="vocab-example">"This internship is a great opportunity to learn."</div>
+                            <div class="translation">🇯🇵 機会 (kikai) | 🇨🇳 机会 (jīhuì)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Skill set</div>
+                            <div class="vocab-meaning">A collection of abilities and knowledge.</div>
+                            <div class="vocab-example">"Developing a diverse skill set is important for career success."</div>
+                            <div class="translation">🇯🇵 スキルセット (sukiru setto) | 🇨🇳 技能组合 (jìnéng zǔhé)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Entrepreneur</div>
+                            <div class="vocab-meaning">A person who starts and runs their own business.</div>
+                            <div class="vocab-example">"She became a successful entrepreneur at a young age."</div>
+                            <div class="translation">🇯🇵 起業家 (kigyōka) | 🇨🇳 企业家 (qǐyèjiā)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Future Plans and Intentions</h3>
+                    <div class="grammar-rule">
+                        <strong>Future Plans:</strong> I'm going to, I plan to, I intend to<br>
+                        <em>Example: "I'm planning to study medicine at university."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Future Predictions:</strong> I will probably, I expect to, I hope to<br>
+                        <em>Example: "I expect to graduate in four years and start my career."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Conditional Future:</strong> If I get accepted, Provided that I, As long as I<br>
+                        <em>Example: "If I get accepted to medical school, I'll specialize in pediatrics."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Career Interview</h3>
+                    <p><strong>Instructions:</strong> Present your career plans using future tenses and career vocabulary from this lesson.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Career Action Plan</h3>
+                    <p><strong>Instructions:</strong> Write a detailed career plan using future tenses and conditional structures.</p>
+                </div>
+            </div>
+
+            <div id="lesson11" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 11: Environmental Awareness</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing environmental issues:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Use facts and statistics to support your points</li>
+                        <li>Connect environmental issues to daily life</li>
+                        <li>Propose practical solutions and actions</li>
+                        <li>Consider both local and global perspectives</li>
+                        <li>Encourage positive environmental behaviors</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Environmental Protection</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Ecosystem</div>
+                            <div class="vocab-meaning">A community of living organisms and their environment.</div>
+                            <div class="vocab-example">"Protecting marine ecosystems is crucial for ocean health."</div>
+                            <div class="translation">🇯🇵 生態系 (seitaikei) | 🇨🇳 生态系统 (shēngtài xìtǒng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Carbon footprint</div>
+                            <div class="vocab-meaning">The amount of carbon dioxide produced by someone's activities.</div>
+                            <div class="vocab-example">"We can reduce our carbon footprint by using public transport."</div>
+                            <div class="translation">🇯🇵 炭素足跡 (tanso ashiato) | 🇨🇳 碳足迹 (tàn zújì)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Renewable</div>
+                            <div class="vocab-meaning">Able to be replaced naturally and used again.</div>
+                            <div class="vocab-example">"Solar and wind are renewable energy sources."</div>
+                            <div class="translation">🇯🇵 再生可能な (saisei kanō na) | 🇨🇳 可再生的 (kě zàishēng de)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Conservation</div>
+                            <div class="vocab-meaning">The protection and preservation of natural resources.</div>
+                            <div class="vocab-example">"Water conservation is important during drought seasons."</div>
+                            <div class="translation">🇯🇵 保護 (hogo) | 🇨🇳 保护 (bǎohù)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Environmental Action Language</h3>
+                    <div class="grammar-rule">
+                        <strong>Present Perfect for Environmental Changes:</strong> Have/has + past participle<br>
+                        <em>Example: "Global temperatures have risen significantly in recent decades."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Passive Voice for Environmental Processes:</strong> Be + past participle<br>
+                        <em>Example: "Forests are being destroyed at an alarming rate."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Modal Verbs for Environmental Necessity:</strong> Must, need to, have to<br>
+                        <em>Example: "We must take action to protect endangered species."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Environmental Campaign</h3>
+                    <p><strong>Instructions:</strong> Create a 4-minute environmental awareness campaign using present perfect and modal verbs.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Eco-Friendly Action Plan</h3>
+                    <p><strong>Instructions:</strong> Write a personal environmental action plan using passive voice and environmental vocabulary.</p>
+                </div>
+            </div>
+
+            <div id="lesson12" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 12: Social Media and Communication</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing social media:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Consider both positive and negative aspects</li>
+                        <li>Discuss digital citizenship and responsibility</li>
+                        <li>Address privacy and safety concerns</li>
+                        <li>Compare online and offline communication</li>
+                        <li>Share personal experiences appropriately</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Digital Communication</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Viral</div>
+                            <div class="vocab-meaning">Content that spreads rapidly across the internet.</div>
+                            <div class="vocab-example">"The video went viral and got millions of views."</div>
+                            <div class="translation">🇯🇵 バイラル (bairaru) | 🇨🇳 病毒式传播 (bìngdú shì chuánbō)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Cyberbullying</div>
+                            <div class="vocab-meaning">Bullying that takes place online or through digital devices.</div>
+                            <div class="vocab-example">"Schools are working to prevent cyberbullying among students."</div>
+                            <div class="translation">🇯🇵 サイバーいじめ (saibā ijime) | 🇨🇳 网络霸凌 (wǎngluò bàlíng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Algorithm</div>
+                            <div class="vocab-meaning">A set of rules that determines what content you see online.</div>
+                            <div class="vocab-example">"Social media algorithms show you content based on your interests."</div>
+                            <div class="translation">🇯🇵 アルゴリズム (arugorizu) | 🇨🇳 算法 (suànfǎ)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Digital footprint</div>
+                            <div class="vocab-meaning">The trail of data you leave when using the internet.</div>
+                            <div class="vocab-example">"Be careful about your digital footprint when posting online."</div>
+                            <div class="translation">🇯🇵 デジタル足跡 (dejitaru ashiato) | 🇨🇳 数字足迹 (shùzì zújì)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Reporting and Indirect Speech</h3>
+                    <div class="grammar-rule">
+                        <strong>Reporting Verbs:</strong> Say, tell, explain, mention, claim<br>
+                        <em>Example: "She said that social media can be addictive."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Indirect Questions:</strong> Ask + if/whether/question word<br>
+                        <em>Example: "I asked him whether he uses social media responsibly."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Time Changes in Reported Speech:</strong> Today → that day, now → then<br>
+                        <em>Example: "He said he was posting a photo then."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Social Media Debate</h3>
+                    <p><strong>Instructions:</strong> Debate social media's impact using reported speech and digital communication vocabulary.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Digital Citizenship Guide</h3>
+                    <p><strong>Instructions:</strong> Write a guide for responsible social media use using indirect speech structures.</p>
+                </div>
+            </div>
+
+            <div id="lesson13" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 13: Travel and Cultural Exchange</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing travel and cultural exchange:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Share experiences with enthusiasm and detail</li>
+                        <li>Show respect for different cultures and customs</li>
+                        <li>Use descriptive language to paint vivid pictures</li>
+                        <li>Compare and contrast different places and experiences</li>
+                        <li>Discuss the educational value of travel</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Travel and Culture</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Immerse</div>
+                            <div class="vocab-meaning">To involve yourself deeply in a particular activity or culture.</div>
+                            <div class="vocab-example">"I want to immerse myself in the local culture when I travel."</div>
+                            <div class="translation">🇯🇵 没頭する (bottō suru) | 🇨🇳 沉浸 (chénjìn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Authentic</div>
+                            <div class="vocab-meaning">Real and genuine, not fake or copied.</div>
+                            <div class="vocab-example">"We ate authentic Italian pasta at a local restaurant."</div>
+                            <div class="translation">🇯🇵 本物の (honmono no) | 🇨🇳 真正的 (zhēnzhèng de)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Perspective</div>
+                            <div class="vocab-meaning">A particular way of viewing or understanding something.</div>
+                            <div class="vocab-example">"Travel gives you a new perspective on life."</div>
+                            <div class="translation">🇯🇵 視点 (shiten) | 🇨🇳 观点 (guāndiǎn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Hospitality</div>
+                            <div class="vocab-meaning">Friendly and generous treatment of guests or strangers.</div>
+                            <div class="vocab-example">"The hospitality of the local people was amazing."</div>
+                            <div class="translation">🇯🇵 おもてなし (omotenashi) | 🇨🇳 好客 (hàokè)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Travel Experiences and Comparisons</h3>
+                    <div class="grammar-rule">
+                        <strong>Present Perfect for Travel Experiences:</strong> Have/has been to, have/has visited<br>
+                        <em>Example: "I have been to five different countries this year."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Comparative and Superlative:</strong> More/most, -er/-est<br>
+                        <em>Example: "This was the most beautiful place I have ever visited."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Wish and If Only:</strong> For expressing desires about travel<br>
+                        <em>Example: "I wish I could travel to Japan next summer."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Travel Story</h3>
+                    <p><strong>Instructions:</strong> Share a travel experience using present perfect and comparative structures.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Dream Destination Essay</h3>
+                    <p><strong>Instructions:</strong> Write about your dream travel destination using wish structures and travel vocabulary.</p>
+                </div>
+            </div>
+
+            <div id="lesson14" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 14: Leadership and Teamwork</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing leadership and teamwork:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Share specific examples from personal experience</li>
+                        <li>Discuss both challenges and successes</li>
+                        <li>Emphasize collaboration and communication skills</li>
+                        <li>Consider different leadership styles</li>
+                        <li>Reflect on lessons learned from group work</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Leadership Skills</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Initiative</div>
+                            <div class="vocab-meaning">The ability to take action and make decisions independently.</div>
+                            <div class="vocab-example">"She showed great initiative by organizing the school event."</div>
+                            <div class="translation">🇯🇵 主導権 (shudōken) | 🇨🇳 主动性 (zhǔdòng xìng)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Delegate</div>
+                            <div class="vocab-meaning">To give tasks or responsibilities to other people.</div>
+                            <div class="vocab-example">"Good leaders know how to delegate tasks effectively."</div>
+                            <div class="translation">🇯🇵 委任する (inin suru) | 🇨🇳 委派 (wěipài)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Motivate</div>
+                            <div class="vocab-meaning">To encourage someone to do something or work harder.</div>
+                            <div class="vocab-example">"The coach knows how to motivate the team before games."</div>
+                            <div class="translation">🇯🇵 動機づける (dōki-zukeru) | 🇨🇳 激励 (jīlì)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Compromise</div>
+                            <div class="vocab-meaning">An agreement where each side gives up something they want.</div>
+                            <div class="vocab-example">"Successful teamwork often requires compromise from all members."</div>
+                            <div class="translation">🇯🇵 妥協 (dakyō) | 🇨🇳 妥协 (tuǒxié)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Leadership Communication</h3>
+                    <div class="grammar-rule">
+                        <strong>Gerunds and Infinitives:</strong> Enjoy doing vs. decide to do<br>
+                        <em>Example: "I enjoy working in teams, but I decided to take on more leadership roles."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Causative Verbs:</strong> Make, let, have, get someone to do something<br>
+                        <em>Example: "A good leader can get people to work together effectively."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Expressing Ability:</strong> Can, could, be able to, manage to<br>
+                        <em>Example: "She was able to resolve the conflict between team members."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Leadership Experience</h3>
+                    <p><strong>Instructions:</strong> Share a leadership or teamwork experience using gerunds, infinitives, and causative verbs.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Team Project Reflection</h3>
+                    <p><strong>Instructions:</strong> Write about a successful team project using leadership vocabulary and grammar structures.</p>
+                </div>
+            </div>
+
+            <div id="lesson15" class="tab-content" style="display: none;">
+                <div class="section">
+                    <h2>Lesson 15: Future Goals and Aspirations</h2>
+                    
+                    <h3>Your Speaking Guides</h3>
+                    <p>When discussing future goals:</p>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>Be specific about your goals and timelines</li>
+                        <li>Explain the steps you'll take to achieve them</li>
+                        <li>Discuss potential challenges and solutions</li>
+                        <li>Connect your goals to your values and interests</li>
+                        <li>Show enthusiasm and determination</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Vocabulary Builder: Goals and Achievement</h2>
+                    
+                    <div class="vocab-grid">
+                        <div class="vocab-card">
+                            <div class="vocab-word">Ambition</div>
+                            <div class="vocab-meaning">A strong desire to achieve something important.</div>
+                            <div class="vocab-example">"Her ambition is to become a successful environmental scientist."</div>
+                            <div class="translation">🇯🇵 野心 (yashin) | 🇨🇳 雄心 (xióngxīn)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Perseverance</div>
+                            <div class="vocab-meaning">The quality of continuing to try despite difficulties.</div>
+                            <div class="vocab-example">"Success requires perseverance and hard work."</div>
+                            <div class="translation">🇯🇵 忍耐力 (nintai-ryoku) | 🇨🇳 毅力 (yìlì)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Milestone</div>
+                            <div class="vocab-meaning">An important event or achievement in someone's life.</div>
+                            <div class="vocab-example">"Graduating from high school is an important milestone."</div>
+                            <div class="translation">🇯🇵 節目 (setsumoku) | 🇨🇳 里程碑 (lǐchéngbēi)</div>
+                        </div>
+
+                        <div class="vocab-card">
+                            <div class="vocab-word">Fulfillment</div>
+                            <div class="vocab-meaning">A feeling of satisfaction from achieving something important.</div>
+                            <div class="vocab-example">"Helping others gives me a sense of fulfillment."</div>
+                            <div class="translation">🇯🇵 充実感 (jūjitsu-kan) | 🇨🇳 成就感 (chéngjiù gǎn)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grammar-box">
+                    <h3>Grammar Focus: Future Aspirations and Plans</h3>
+                    <div class="grammar-rule">
+                        <strong>Future Perfect:</strong> Will have + past participle<br>
+                        <em>Example: "By 2030, I will have completed my master's degree."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Future Continuous:</strong> Will be + -ing<br>
+                        <em>Example: "This time next year, I'll be studying at university."</em>
+                    </div>
+                    <div class="grammar-rule">
+                        <strong>Hope, Expect, Plan:</strong> + infinitive or that clause<br>
+                        <em>Example: "I hope to make a positive impact on society."</em>
+                    </div>
+                </div>
+
+                <div class="activity-box">
+                    <h3>🗣️ Speaking Activity: Vision Board Presentation</h3>
+                    <p><strong>Instructions:</strong> Present your 5-year plan using future perfect and continuous tenses.</p>
+                </div>
+
+                <div class="activity-box">
+                    <h3>✍️ Writing Activity: Letter to Future Self</h3>
+                    <p><strong>Instructions:</strong> Write a letter to your future self using all future tense structures and goal vocabulary.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Created by  Maria Kristina Basa | <a href="#">Contact</a> | <a href="#">Resources</a></p>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(tabName).style.display = 'block';
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'973eb512d0affec8',t:'MTc1NTk5NTA3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
